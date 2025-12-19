@@ -85,5 +85,35 @@ func increase(_ value: inout Int){
 var a = 5
 increase(&a)
 print("a =:" , a )
+var cart: [String: Int] = ["SKU-001": 1]
+let priceList: [String: Double] = [
+ "SKU-001": 120000,
+ "SKU-002": 99000
+]
+func addToCart(
+ sku: String?,
+ quantityText: String?,
+ cart: inout [String: Int],
+ priceList: [String: Double]
+){
+    guard let sku = sku , let quantityText = quantityText else {
+       print("khong hop le")
+        return
+    }
+    guard let price = priceList[sku] else {
+        print("san pham khong ton tai")
+        return
+    }
+    guard let cartQuantity = Int(quantityText) else {
+        print("so luong khong hop le")
+        return
+    }
+    cart[sku, default: 0] += cartQuantity
+    print("Da them \(cartQuantity) san pham \(sku) vao gio hang")
+    
+    
+}
+
+
 
 
