@@ -14,6 +14,20 @@ func validateSKU(_ sku: String?){
     }
     print("SKU hop le")
 }
-
+func validatePrice(_ text: String?){
+    guard let text = text else {
+        print("khong hop le")
+        return
+    }
+    guard let text = Double(text) else {
+        print("Gias Khong Hop Le")
+        return
+    }
+    guard text >= 0 else {
+        print("Gia phai Lon Hon ")
+        return
+    }
+    print("Gia hop le")
+}
 
 
