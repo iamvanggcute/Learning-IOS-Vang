@@ -44,6 +44,39 @@ func calcTotal(priceText: String?, quantityText: String?){
     }
     print("Thanh tien hop le")
 }
-
+struct Product {
+ let sku: String
+ let name: String
+ let price: Double
+}
+func createProduct(
+ sku: String?,
+ name: String?,
+ priceText: String?
+) -> Product? {
+    guard let sku = sku , let name = name , let priceText = priceText else {
+        print("Khong Hop Le")
+        return nil
+    }
+    guard sku.isEmpty , name.isEmpty , priceText.isEmpty else {
+        print("rong")
+        return nil
+    }
+    guard sku.hasPrefix("SKU_") else{
+        print("Loi")
+        return nil
+    }
+    guard let price = Double(priceText) else {
+        print("Gia Khong Hop Le")
+        return nil
+    }
+    
+    guard price > 0 else {
+        print("Gia Lon Hon 0")
+        return nil
+    }
+    
+    return Product(sku: sku, name: name, price: price)
+}
 
 
