@@ -23,11 +23,27 @@ func validatePrice(_ text: String?){
         print("Gias Khong Hop Le")
         return
     }
-    guard text >= 0 else {
+    guard text <= 0 else {
         print("Gia phai Lon Hon ")
         return
     }
     print("Gia hop le")
 }
+func calcTotal(priceText: String?, quantityText: String?){
+    guard let priceText = priceText, let price = Double(priceText) else {
+        print("khong chuyen duoc")
+        return
+    }
+    guard let quantityText = quantityText, let quantity = Double(quantityText) else {
+        print("khon chuyen duoc")
+        return
+    }
+    guard  quantity <= 0 else {
+        print("So Luong Khong Hoop Le")
+        return
+    }
+    print("Thanh tien hop le")
+}
+
 
 
