@@ -78,5 +78,12 @@ func createProduct(
     
     return Product(sku: sku, name: name, price: price)
 }
+func increase(_ value: inout Int){
+    value  += 1
+    print(value)
+}
+var a = 5
+increase(&a)
+print("a =:" , a )
 
 
