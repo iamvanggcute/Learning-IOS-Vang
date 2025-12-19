@@ -110,8 +110,32 @@ func addToCart(
     }
     cart[sku, default: 0] += cartQuantity
     print("Da them \(cartQuantity) san pham \(sku) vao gio hang")
-    
-    
+}
+func processAddToCart(
+ sku: String?,
+ name: String?,
+ priceText: String?,
+ quantityText: String?,
+ cart: inout [String: Int]
+){
+    guard let skt = sku ,let name = name , let  priceText = priceText ,let quantityText = quantityText  else{
+        print("Khong Hop Le")
+        return
+    }
+    guard sku!.isEmpty , name.isEmpty , priceText.isEmpty , quantityText.isEmpty else {
+        print("Rong")
+        return
+    }
+    guard let price = Double(priceText) else {
+        print("khong dung du lieu")
+        return
+    }
+    guard let quantity = Int(quantityText) else {
+        print("khong dung du lieu")
+        return
+    }
+    let Product = Product(sku: skt, name: name, price: price)
+    cart[Product.sku, default: 0] += quantity
 }
 
 
