@@ -87,7 +87,7 @@ increase(&a)
 print("a =:" , a )
 var cart: [String: Int] = ["SKU-001": 1]
 let priceList: [String: Double] = [
- "SKU-001": 120000,
+ "SKU-001":  120000,
  "SKU-002": 99000
 ]
 func addToCart(
