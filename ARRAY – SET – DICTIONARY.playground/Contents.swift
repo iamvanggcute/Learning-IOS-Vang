@@ -22,6 +22,7 @@ var number : Set<Int> = [1,2,3]
 number.insert(4)
 number.remove(2)
 print(number)
+
 let a: Set<Int> = [1, 2, 3, 4]
 let b: Set<Int> = [3, 4, 5]
 let unionSet = a.union(b)
